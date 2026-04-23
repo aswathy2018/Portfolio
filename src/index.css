@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-light-muted bg-light transition-colors duration-500 selection:bg-black selection:text-white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .dark body {
+    @apply text-dark-muted bg-dark selection:bg-white selection:text-black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-black dark:text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-16 tracking-tight;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition-transform duration-300 shadow-md flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full border border-light-border dark:border-dark-border font-medium hover:bg-gray-50 dark:hover:bg-dark-card transition-colors duration-300 flex items-center justify-center gap-2;
+  }
+
+  .card {
+    @apply bg-light-card dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-700;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-light-border dark:border-dark-border bg-transparent focus:outline-none focus:border-black dark:focus:border-white transition-colors text-black dark:text-white;
+  }
+}
+
+.glass-nav {
+  @apply bg-white/70 dark:bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-800 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-700;
+}
